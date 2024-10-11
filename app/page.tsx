@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <Navbar />
       <div className="min-h-screen flex flex-col justify-center items-center ">
-        <AlertHandler />
         <CarouselDemo />
+        <AlertHandler />
         <AccordionDemo />
       </div>
     </>

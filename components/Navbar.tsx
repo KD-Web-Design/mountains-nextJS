@@ -10,7 +10,7 @@ export const inter = Inter({
 
 export default function Navbar() {
   return (
-    <nav className="w-full h-20 border border-b-2 border-b-black flex justify-end gap-4 items-center relative p-8">
+    <nav className="w-full h-20 flex justify-end gap-4 items-center relative p-8">
       <h1 className={`${inter.className} absolute left-8 text-xl`}>
         summitSeekers
       </h1>

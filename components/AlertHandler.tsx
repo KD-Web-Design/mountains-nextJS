@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { AlertDemo } from "./AlertDemo";
 
 export default function AlertHandler() {
-  const [alertActive, setAlertActive] = useState(false);
+  const [alertActive, setAlertActive] = useState<boolean>(false);
 
   function handleClick() {
     setAlertActive(true);

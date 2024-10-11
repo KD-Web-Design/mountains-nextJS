@@ -7,25 +7,23 @@ import {
 
 export default function AccordionDemo() {
   return (
-    <Accordion type="single" collapsible className="w-1/2">
+    <Accordion type="single" collapsible className="w-full p-6 max-w-5xl">
       <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionTrigger>Are the pictures free of rights ?</AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
+          Yes. All pictures comes from Pixabay.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
+        <AccordionTrigger>Is this app powered by Next.JS ?</AccordionTrigger>
         <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
+          Yes. Along with Typescript and TailwindCSS.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
+        <AccordionTrigger>Is there a dark mode ?</AccordionTrigger>
         <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you
-          prefer.
+          Of course, take a look at the upper right corner.
         </AccordionContent>
       </AccordionItem>
     </Accordion>

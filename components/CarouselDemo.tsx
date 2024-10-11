@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -24,21 +24,19 @@ export function CarouselDemo() {
         {images.map((image) => (
           <CarouselItem key={image.id}>
             <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <Image
-                    src={image.src}
-                    alt={image.title}
-                    layout="responsive"
-                    width={500}
-                    height={500}
-                    className="w-full h-auto object-cover rounded"
-                  />
-                </CardContent>
-                <p className="pb-6 text-center text-lg font-semibold">
-                  {image.title}
-                </p>
-              </Card>
+              <CardContent className="flex aspect-square items-center justify-center p-6">
+                <Image
+                  src={image.src}
+                  alt={image.title}
+                  layout="responsive"
+                  width={500}
+                  height={500}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </CardContent>
+              <p className="pb-6 text-center text-lg font-semibold">
+                {image.title}
+              </p>
             </div>
           </CarouselItem>
         ))}
