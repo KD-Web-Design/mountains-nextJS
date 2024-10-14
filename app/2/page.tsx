@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 import Parallax from "./components/Parallax";
 import Navbar from "@/components/Navbar";
 import Lenis from "lenis";
+import { Spacing } from "./components/Spacing";
+import Hero from "./components/Hero";
 
 export default function Page() {
   useEffect(() => {
@@ -20,7 +22,10 @@ export default function Page() {
   return (
     <main>
       <Navbar />
+      <Spacing size="sm" />
       <Parallax />
+      <Spacing size="sm" />
+      <Hero />
     </main>
   );
 }
