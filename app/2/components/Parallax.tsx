@@ -10,7 +10,7 @@ import Kilimanjaro from "../../../public/images/kilimanjaro.jpg";
 import Kirkjufell from "../../../public/images/kirkjufell.jpg";
 import MontBlanc from "../../../public/images/mont-blanc.jpg";
 import { useScroll, useTransform, motion } from "framer-motion";
-import "../../2/components/parallax.css";
+import "../../2/components/styles/parallax.css";
 
 export default function Parallax() {
   const container = useRef(null);

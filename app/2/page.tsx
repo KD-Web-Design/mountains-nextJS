@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Lenis from "lenis";
 import { Spacing } from "./components/Spacing";
 import Hero from "./components/Hero";
+import Chart from "./components/Chart";
 
 export default function Page() {
   useEffect(() => {
@@ -22,10 +23,12 @@ export default function Page() {
   return (
     <main>
       <Navbar />
-      <Spacing size="sm" />
+      <Spacing size="md" />
       <Parallax />
       <Spacing size="sm" />
       <Hero />
+      <Spacing size="sm" />
+      <Chart />
     </main>
   );
 }

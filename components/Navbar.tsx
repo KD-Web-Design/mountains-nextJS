@@ -18,7 +18,7 @@ const menu: { title: string; route: string }[] = [
   },
   {
     title: "Mountains",
-    route: "/2",
+    route: "/mountains",
   },
   {
     title: "Page 3",
@@ -28,7 +28,7 @@ const menu: { title: string; route: string }[] = [
 
 export default function Navbar() {
   return (
-    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
+    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 fixed z-10 bg-background shadow-md">
       {/* MOBILE  */}
 
       <h2 className="mx-2 text-xl font-bold">summitSeekers</h2>
@@ -120,13 +120,17 @@ function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function MountainIcon(props: React.SVGProps<SVGSVGElement>) {
+export function MountainIcon({
+  width = "24",
+  height = "24",
+  ...props
+}: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
