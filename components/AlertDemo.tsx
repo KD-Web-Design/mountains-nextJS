@@ -9,7 +9,7 @@ interface AlertDemoProps {
 export function AlertDemo({ alertActive }: AlertDemoProps) {
   return (
     <Alert
-      className={`w-64 fixed left-6 top-6 transition-all duration-500 ease-in-out 
+      className={`w-64 fixed left-6 top-6 transition-all duration-500 ease-in-out z-20 
         ${
           alertActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
         }`}
