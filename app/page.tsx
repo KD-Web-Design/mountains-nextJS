@@ -1,12 +1,9 @@
 import AccordionDemo from "@/components/AccordionDemo";
 import AlertHandler from "@/components/AlertHandler";
 
-import Navbar from "@/components/Navbar";
-
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className="min-h-screen flex flex-col justify-center items-center ">
         <AlertHandler />
         <AccordionDemo />

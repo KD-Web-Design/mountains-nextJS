@@ -2,15 +2,9 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import AmaDablam from "../../../public/images/ama-dablam.jpg";
-import MountFuji from "../../../public/images/mount-fuji.jpg";
-import MontCervin from "../../../public/images/mont-cervin.jpg";
-import Everest from "../../../public/images/everest.jpg";
-import Kilimanjaro from "../../../public/images/kilimanjaro.jpg";
-import Kirkjufell from "../../../public/images/kirkjufell.jpg";
-import MontBlanc from "../../../public/images/mont-blanc.jpg";
 import { useScroll, useTransform, motion } from "framer-motion";
 import "./styles/parallax.css";
+import { createPicturesData } from "@/lib/picturesData";
 
 export default function Parallax() {
   const container = useRef(null);
@@ -25,36 +19,7 @@ export default function Parallax() {
   const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
   const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
 
-  const pictures = [
-    {
-      src: MountFuji,
-      scale: scale4,
-    },
-    {
-      src: MontBlanc,
-      scale: scale5,
-    },
-    {
-      src: AmaDablam,
-      scale: scale6,
-    },
-    {
-      src: MontCervin,
-      scale: scale5,
-    },
-    {
-      src: Kirkjufell,
-      scale: scale6,
-    },
-    {
-      src: Kilimanjaro,
-      scale: scale8,
-    },
-    {
-      src: Everest,
-      scale: scale9,
-    },
-  ];
+  const pictures = createPicturesData(scale4, scale5, scale6, scale8, scale9);
 
   return (
     <div ref={container} className="h-[300vh] relative">
