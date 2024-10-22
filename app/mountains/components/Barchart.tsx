@@ -114,27 +114,6 @@ const CustomToolTipContent: React.FC<CustomTooltipProps> = ({
   return null;
 };
 
-const CustomBar: React.FC<any> = (props) => {
-  const { x, y, width, height } = props;
-  return (
-    <g>
-      <rect x={x} y={y} width={width} height={height} fill={props.fill} />
-      {props.payload.isFavorite && (
-        <text
-          x={x + 100}
-          y={y - 100}
-          textAnchor="middle"
-          fill="red"
-          fontSize="30px"
-          transform={`rotate(25, ${x}, ${y - 120})`}
-        >
-          ❤️
-        </text>
-      )}
-    </g>
-  );
-};
-
 export default function Chart() {
   return (
     <>
@@ -155,12 +134,7 @@ export default function Chart() {
               axisLine={false}
             />
             <ChartTooltip content={<CustomToolTipContent />} />
-            <Bar
-              dataKey="altitude"
-              fill="var(--color-altitude)"
-              radius={4}
-              shape={<CustomBar />}
-            />
+            <Bar dataKey="altitude" fill="var(--color-altitude)" radius={4} />
             <Bar
               dataKey="protuberance"
               fill="var(--color-protuberance)"

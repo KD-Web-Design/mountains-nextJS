@@ -21,36 +21,23 @@ import {
 export const description = "A simple pie chart";
 
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
+  { element: "sky", percentage: 75, fill: "#38bdf8" },
+  { element: "sunny", percentage: 17, fill: "#f9fafb" },
+  { element: "shady", percentage: 8, fill: "#9ca3af" },
 ];
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  sky: {
+    label: "Sky",
+    color: "#38bdf8",
   },
-  chrome: {
-    label: "Chrome",
-    color: "hsl(var(--chart-1))",
+  sunny: {
+    label: "Sunny side of the mountain",
+    color: "#f9fafb",
   },
-  safari: {
-    label: "Safari",
-    color: "hsl(var(--chart-2))",
-  },
-  firefox: {
-    label: "Firefox",
-    color: "hsl(var(--chart-3))",
-  },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
-  },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
+  shady: {
+    label: "Shady side of the mountain",
+    color: "#9ca3af",
   },
 } satisfies ChartConfig;
 
@@ -66,12 +53,18 @@ export function Piechart() {
           config={chartConfig}
           className="mx-auto aspect-square max-h-[250px]"
         >
-          <PieChart>
+          <PieChart className="">
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Pie data={chartData} dataKey="visitors" nameKey="browser" />
+            <Pie
+              data={chartData}
+              dataKey="percentage"
+              nameKey="element"
+              startAngle={180}
+              endAngle={-180}
+            />
           </PieChart>
         </ChartContainer>
       </CardContent>
