@@ -24,10 +24,12 @@ export default function Page() {
     <main>
       <Spacing size="md" />
       <Parallax />
-      <Spacing size="sm" />
-
-      <Chart />
-      <Piechart />
+      <Spacing size="md" />
+      <div className="max-lg:flex-col flex max-w-screen-xl mx-auto items-center justify-center gap-16 p-8">
+        <Chart />
+        <Piechart />
+      </div>
+      <Spacing size="md" />
     </main>
   );
 }

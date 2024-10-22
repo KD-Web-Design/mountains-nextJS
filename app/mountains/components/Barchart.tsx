@@ -5,12 +5,13 @@ import {
   ChartTooltip,
 } from "@/components/ui/chart";
 import { Bar, BarChart, CartesianGrid, TooltipProps, XAxis } from "recharts";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface MountainData {
   mountain: string;
   location: string;
   altitude: number;
-  protuberance: number;
+  prominence: number;
   isFavorite?: boolean;
 }
 
@@ -19,43 +20,43 @@ const chartData: MountainData[] = [
     mountain: "Kilimanjaro",
     location: "Tanzania",
     altitude: 5895,
-    protuberance: 5885,
+    prominence: 5885,
   },
   {
     mountain: "Mont Fuji",
     location: "Japan",
     altitude: 3776,
-    protuberance: 3776,
+    prominence: 3776,
   },
   {
     mountain: "Everest",
     location: "Nepal/China",
     altitude: 8849,
-    protuberance: 8848,
+    prominence: 8848,
   },
   {
     mountain: "Mont Cervin",
     location: "Switzerland/Italia",
     altitude: 4478,
-    protuberance: 1040,
+    prominence: 1040,
   },
   {
     mountain: "Ama Dablam",
     location: "Nepal",
     altitude: 6812,
-    protuberance: 1041,
+    prominence: 1041,
   },
   {
     mountain: "Kirkjufell",
     location: "Iceland",
     altitude: 463,
-    protuberance: 449,
+    prominence: 449,
   },
   {
     mountain: "Mont Blanc",
     location: "France",
     altitude: 4809,
-    protuberance: 4696,
+    prominence: 4696,
     isFavorite: true,
   },
 ];
@@ -65,8 +66,8 @@ const chartConfig = {
     label: "Altitude",
     color: "#2563eb",
   },
-  protuberance: {
-    label: "Protuberance",
+  prominence: {
+    label: "Prominence",
     color: "#60a5fa",
   },
 } satisfies ChartConfig;
@@ -96,15 +97,27 @@ const CustomToolTipContent: React.FC<CustomTooltipProps> = ({
             </span>
           </div>
           <div className="flex justify-between gap-2">
-            <span className="text-xs text-muted-foreground">Altitude</span>
+            <span className="text-xs text-muted-foreground">
+              <span
+                className="inline-block w-2 h-2  mr-1"
+                style={{ backgroundColor: chartConfig.altitude.color }}
+              ></span>
+              Altitude
+            </span>
             <span className="text-xs font-medium text-foreground">
               {data.altitude} m
             </span>
           </div>
           <div className="flex justify-between gap-2">
-            <span className="text-xs text-muted-foreground">Protuberance</span>
+            <span className="text-xs text-muted-foreground">
+              <span
+                className="inline-block w-2 h-2 mr-1"
+                style={{ backgroundColor: chartConfig.prominence.color }}
+              ></span>
+              Prominence
+            </span>
             <span className="text-xs font-medium text-foreground">
-              {data.protuberance} m
+              {data.prominence} m
             </span>
           </div>
         </div>
@@ -116,33 +129,27 @@ const CustomToolTipContent: React.FC<CustomTooltipProps> = ({
 
 export default function Chart() {
   return (
-    <>
-      <div className="relative">
-        <h1 className="text-center scroll-m-20 pb-8 text-3xl font-semibold tracking-tight first:mt-0">
-          Altitude and Prominence of Major Peaks
-        </h1>
-        <ChartContainer
-          config={chartConfig}
-          className="min-h-[200px] max-w-4xl mx-auto"
-        >
-          <BarChart accessibilityLayer data={chartData}>
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="mountain"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-            />
-            <ChartTooltip content={<CustomToolTipContent />} />
-            <Bar dataKey="altitude" fill="var(--color-altitude)" radius={4} />
-            <Bar
-              dataKey="protuberance"
-              fill="var(--color-protuberance)"
-              radius={4}
-            />
-          </BarChart>
-        </ChartContainer>
-      </div>
-    </>
+    <Card className="flex flex-col">
+      <CardHeader className="items-center pb-0">
+        <CardTitle>Altitude and Prominence of Major Peaks</CardTitle>
+      </CardHeader>
+      <ChartContainer
+        config={chartConfig}
+        className="min-h-[400px] max-w-3xl mx-auto"
+      >
+        <BarChart accessibilityLayer data={chartData}>
+          <CartesianGrid vertical={false} />
+          <XAxis
+            dataKey="mountain"
+            tickLine={false}
+            tickMargin={10}
+            axisLine={false}
+          />
+          <ChartTooltip content={<CustomToolTipContent />} />
+          <Bar dataKey="altitude" fill="var(--color-altitude)" radius={4} />
+          <Bar dataKey="prominence" fill="var(--color-prominence)" radius={4} />
+        </BarChart>
+      </ChartContainer>
+    </Card>
   );
 }

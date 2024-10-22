@@ -51,19 +51,20 @@ export function Piechart() {
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
+          className="mx-auto aspect-square max-h-[350px]"
         >
           <PieChart className="">
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent hideLabel />}
+              content={<ChartTooltipContent hideLabel hidePercentage />}
             />
             <Pie
               data={chartData}
               dataKey="percentage"
               nameKey="element"
-              startAngle={180}
-              endAngle={-180}
+              startAngle={225}
+              endAngle={-225}
+              stroke="#000000"
             />
           </PieChart>
         </ChartContainer>
