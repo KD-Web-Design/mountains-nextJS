@@ -1,43 +1,42 @@
-import Image from "next/image";
 import React from "react";
+import { MountainIcon } from "./Navbar";
+import AlertHandler from "./AlertHandler";
 
 export default function Hero() {
   return (
-    <div className="flex flex-wrap">
-      <div className="w-full sm:w-8/12 mb-10">
-        <div className="container mx-auto h-full sm:p-10">
-          <nav className="flex px-4 justify-between items-center">
-            <div className="text-4xl font-bold">
-              Plant<span className="text-blue-700">.</span>
-            </div>
-          </nav>
-          <header className="container px-4 lg:flex mt-10 items-center h-full lg:mt-0">
-            <div className="w-full">
-              <h1 className="text-4xl lg:text-6xl font-bold">
-                Find your <span className="text-blue-700">greeny</span> stuff
-                for your room
-              </h1>
-              <div className="w-20 h-2 bg-blue-700 my-4"></div>
-              <p className="text-xl mb-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae maiores neque eaque ea odit placeat, tenetur illum
-                distinctio nulla voluptatum a corrupti beatae tempora aperiam
-                quia id aliquam possimus aut.
-              </p>
-              <button className="bg-blue-500 text-white text-2xl font-medium px-4 py-2 rounded shadow">
-                Learn More
-              </button>
-            </div>
-          </header>
+    <section>
+      <div className="grid px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="mr-auto place-self-center lg:col-span-7">
+          <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+            Discover the most stunning mountains.
+          </h1>
+          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            Take time to admire some of the most beautiful pikes in the world.
+          </p>
+          <a
+            href="#"
+            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+          >
+            Get started
+            <svg
+              className="w-5 h-5 ml-2 -mr-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+          <AlertHandler />
+        </div>
+        <div className="hidden lg:mt-0 lg:col-span-5 lg:flex lg:justify-center">
+          <MountainIcon width={200} height={200} />
         </div>
       </div>
-      <Image
-        src="/images/peak-illustration.svg"
-        alt=""
-        className="w-full h-48 object-cover object-left sm:h-screen sm:w-4/12"
-        width={300}
-        height={500}
-      />
-    </div>
+    </section>
   );
 }

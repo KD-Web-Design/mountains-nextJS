@@ -11,12 +11,12 @@ export default function AlertHandler() {
     setAlertActive(true);
     setTimeout(() => {
       setAlertActive(false);
-    }, 4000);
+    }, 5000);
   }
   return (
     <>
-      <div className="mb-6">
-        <Button onClick={handleClick}>Click me !</Button>
+      <div className="inline-flex">
+        <Button onClick={handleClick}>Go Climbing</Button>
         {<AlertDemo alertActive={alertActive} />}
       </div>
     </>

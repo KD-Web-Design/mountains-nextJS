@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import {
   ChartConfig,
@@ -116,33 +114,61 @@ const CustomToolTipContent: React.FC<CustomTooltipProps> = ({
   return null;
 };
 
+const CustomBar: React.FC<any> = (props) => {
+  const { x, y, width, height } = props;
+  return (
+    <g>
+      <rect x={x} y={y} width={width} height={height} fill={props.fill} />
+      {props.payload.isFavorite && (
+        <text
+          x={x + 100}
+          y={y - 100}
+          textAnchor="middle"
+          fill="red"
+          fontSize="30px"
+          transform={`rotate(25, ${x}, ${y - 120})`}
+        >
+          ❤️
+        </text>
+      )}
+    </g>
+  );
+};
+
 export default function Chart() {
   return (
     <>
-      <h1 className="text-center scroll-m-20 pb-8 text-3xl font-semibold tracking-tight first:mt-0">
-        Altitude and Prominence of Major Peaks
-      </h1>
-      <ChartContainer
-        config={chartConfig}
-        className="min-h-[200px] max-w-4xl mx-auto"
-      >
-        <BarChart accessibilityLayer data={chartData}>
-          <CartesianGrid vertical={false} />
-          <XAxis
-            dataKey="mountain"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-          />
-          <ChartTooltip content={<CustomToolTipContent />} />
-          <Bar dataKey="altitude" fill="var(--color-altitude)" radius={4} />
-          <Bar
-            dataKey="protuberance"
-            fill="var(--color-protuberance)"
-            radius={4}
-          />
-        </BarChart>
-      </ChartContainer>
+      <div className="relative">
+        <h1 className="text-center scroll-m-20 pb-8 text-3xl font-semibold tracking-tight first:mt-0">
+          Altitude and Prominence of Major Peaks
+        </h1>
+        <ChartContainer
+          config={chartConfig}
+          className="min-h-[200px] max-w-4xl mx-auto"
+        >
+          <BarChart accessibilityLayer data={chartData}>
+            <CartesianGrid vertical={false} />
+            <XAxis
+              dataKey="mountain"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+            />
+            <ChartTooltip content={<CustomToolTipContent />} />
+            <Bar
+              dataKey="altitude"
+              fill="var(--color-altitude)"
+              radius={4}
+              shape={<CustomBar />}
+            />
+            <Bar
+              dataKey="protuberance"
+              fill="var(--color-protuberance)"
+              radius={4}
+            />
+          </BarChart>
+        </ChartContainer>
+      </div>
     </>
   );
 }

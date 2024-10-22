@@ -15,9 +15,9 @@ export function AlertDemo({ alertActive }: AlertDemoProps) {
         }`}
     >
       <RocketIcon className="h-4 w-4" />
-      <AlertTitle>Heads up!</AlertTitle>
+      <AlertTitle>Did you know ?</AlertTitle>
       <AlertDescription>
-        You can add components to your app using the cli.
+        Mount Everest grows approximately 44 millimetres every year.
       </AlertDescription>
     </Alert>
   );

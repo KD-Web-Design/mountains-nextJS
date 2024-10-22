@@ -7,7 +7,7 @@ import {
 
 export default function AccordionDemo() {
   return (
-    <Accordion type="single" collapsible className="w-full p-6 max-w-5xl">
+    <Accordion type="single" collapsible className="w-full p-6">
       <AccordionItem value="item-1">
         <AccordionTrigger>Are the pictures free of rights ?</AccordionTrigger>
         <AccordionContent>

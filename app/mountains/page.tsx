@@ -4,8 +4,9 @@ import React, { useEffect } from "react";
 import Parallax from "./components/Parallax";
 import Lenis from "lenis";
 import { Spacing } from "./components/Spacing";
-import Hero from "./components/Hero";
-import Chart from "./components/Chart";
+
+import Chart from "./components/Barchart";
+import { Piechart } from "./components/Piechart";
 
 export default function Page() {
   useEffect(() => {
@@ -24,9 +25,9 @@ export default function Page() {
       <Spacing size="md" />
       <Parallax />
       <Spacing size="sm" />
-      <Hero />
-      <Spacing size="sm" />
+
       <Chart />
+      <Piechart />
     </main>
   );
 }
