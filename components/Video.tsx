@@ -9,7 +9,7 @@ export default function Video() {
   );
 }
 
-async function VideoComponent({ fileName }) {
+async function VideoComponent({ fileName }: { fileName: string }) {
   const { blobs } = await list({
     prefix: fileName,
     limit: 1,
