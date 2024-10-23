@@ -6,7 +6,6 @@ import { Pie, PieChart } from "recharts";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -21,7 +20,7 @@ import {
 export const description = "A simple pie chart";
 
 const chartData = [
-  { element: "sky", percentage: 75, fill: "#38bdf8" },
+  { element: "sky", percentage: 75, fill: "#60a5fa" },
   { element: "sunny", percentage: 17, fill: "#f9fafb" },
   { element: "shady", percentage: 8, fill: "#9ca3af" },
 ];
@@ -29,7 +28,7 @@ const chartData = [
 const chartConfig = {
   sky: {
     label: "Sky",
-    color: "#38bdf8",
+    color: "#60a5fa",
   },
   sunny: {
     label: "Sunny side of the mountain",
@@ -45,13 +44,12 @@ export function Piechart() {
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Pike Pie Chart</CardTitle>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-[350px]"
+          className="mx-auto aspect-square max-h-[250px]"
         >
           <PieChart className="">
             <ChartTooltip

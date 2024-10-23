@@ -23,7 +23,7 @@ const chartData: MountainData[] = [
     prominence: 5885,
   },
   {
-    mountain: "Mont Fuji",
+    mountain: "Fuji",
     location: "Japan",
     altitude: 3776,
     prominence: 3776,
@@ -35,7 +35,7 @@ const chartData: MountainData[] = [
     prominence: 8848,
   },
   {
-    mountain: "Mont Cervin",
+    mountain: "Cervin",
     location: "Switzerland/Italia",
     altitude: 4478,
     prominence: 1040,
@@ -53,7 +53,7 @@ const chartData: MountainData[] = [
     prominence: 449,
   },
   {
-    mountain: "Mont Blanc",
+    mountain: "Blanc",
     location: "France",
     altitude: 4809,
     prominence: 4696,
@@ -135,7 +135,7 @@ export default function Chart() {
       </CardHeader>
       <ChartContainer
         config={chartConfig}
-        className="min-h-[400px] max-w-3xl mx-auto"
+        className="min-h-[200px] lg:min-h-[400px] max-w-3xl mx-auto"
       >
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
@@ -144,6 +144,7 @@ export default function Chart() {
             tickLine={false}
             tickMargin={10}
             axisLine={false}
+            tickFormatter={(value) => value.slice(0, 3)}
           />
           <ChartTooltip content={<CustomToolTipContent />} />
           <Bar dataKey="altitude" fill="var(--color-altitude)" radius={4} />
