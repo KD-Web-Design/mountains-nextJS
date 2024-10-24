@@ -7,11 +7,15 @@ import {
 
 export default function AccordionDemo() {
   return (
-    <Accordion type="single" collapsible className="w-full p-6">
+    <Accordion
+      type="single"
+      collapsible
+      className="max-w-screen-xl mx-auto p-6"
+    >
       <AccordionItem value="item-1">
         <AccordionTrigger>Are the pictures free of rights ?</AccordionTrigger>
         <AccordionContent>
-          Yes. All pictures comes from Pixabay.
+          Yes. All pictures comes from Pixabay and Pexels.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">

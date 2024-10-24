@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { list } from "@vercel/blob";
+import Hero from "./Hero";
 
 export default function Video() {
   return (
@@ -18,16 +19,22 @@ async function VideoComponent({ fileName }: { fileName: string }) {
   const { url } = blobs[0];
 
   return (
-    <video
-      preload="auto"
-      aria-label="Video player"
-      loop
-      muted
-      autoPlay
-      controls
-    >
-      <source src={url} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <main>
+      <div className="relative">
+        <video
+          preload="auto"
+          aria-label="Video player"
+          loop
+          muted
+          className="w-full h-screen object-cover -z-10"
+        >
+          <source src={url} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute bottom-1/4 left-4 md:left-8 lg:left-12">
+          <Hero />
+        </div>
+      </div>
+    </main>
   );
 }

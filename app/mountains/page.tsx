@@ -22,7 +22,7 @@ export default function Page() {
 
   return (
     <main>
-      <Spacing size="md" />
+      <Spacing size="sm" />
       <Parallax />
       <Spacing size="md" />
       <div className="max-lg:flex-col flex max-w-screen-xl mx-auto items-center justify-center gap-16 p-8">

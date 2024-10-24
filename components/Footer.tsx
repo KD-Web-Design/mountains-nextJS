@@ -42,9 +42,10 @@ export default function Footer() {
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2024{" "}
           <a href="#" className="hover:underline">
-            summitSeekers™
+            summitSeekers™.
           </a>
-          . Made with ❤️ by KD Web Design.
+          <br />
+          Made with ❤️ by KD Web Design.
         </span>
       </div>
     </footer>

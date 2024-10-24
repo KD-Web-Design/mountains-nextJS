@@ -16,7 +16,12 @@ export default function AlertHandler() {
   return (
     <>
       <div className="inline-flex">
-        <Button onClick={handleClick}>Go Climbing</Button>
+        <Button
+          className="text-white bg-black hover:bg-black"
+          onClick={handleClick}
+        >
+          Go Climbing
+        </Button>
         {<AlertDemo alertActive={alertActive} />}
       </div>
     </>

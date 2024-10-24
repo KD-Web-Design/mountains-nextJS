@@ -46,7 +46,7 @@ export default function Navbar() {
             <MountainIcon className="h-6 w-6" />
           </Link>
           <div className="grid gap-2 py-6">
-            <ul className="">
+            <ul>
               {menu.map((item, index) => (
                 <li key={index}>
                   {item.route ? (
