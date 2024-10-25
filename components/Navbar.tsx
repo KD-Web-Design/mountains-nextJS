@@ -13,16 +13,16 @@ export const inter = Inter({
 
 const menu: { title: string; route: string }[] = [
   {
-    title: "Home",
+    title: "Accueil",
     route: "/",
   },
   {
-    title: "Mountains",
-    route: "/mountains",
+    title: "Sommets",
+    route: "/sommets",
   },
   {
-    title: "Page 3",
-    route: "/3",
+    title: "Tarifs",
+    route: "/tarifs",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function Navbar() {
             </ul>
           </div>
           <div className="flex w-full justify-between items-center">
-            <h2 className="text-md font-semibold">Switch Theme</h2>
+            <h2 className="text-md font-semibold">Changer le thème</h2>
             <ModeToggle />
           </div>
         </SheetContent>

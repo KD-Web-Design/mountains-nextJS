@@ -15,9 +15,9 @@ export function AlertDemo({ alertActive }: AlertDemoProps) {
         }`}
     >
       <RocketIcon className="h-4 w-4" />
-      <AlertTitle>Did you know ?</AlertTitle>
+      <AlertTitle>Le saviez-vous ?</AlertTitle>
       <AlertDescription>
-        Mount Everest grows approximately 44 millimetres every year.
+        Le mont Everest prend environ 44 millimètres chaque année.
       </AlertDescription>
     </Alert>
   );

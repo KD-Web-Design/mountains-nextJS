@@ -1,5 +1,5 @@
 import React from "react";
-import { Spacing } from "../mountains/components/Spacing";
+import { Spacing } from "../sommets/components/Spacing";
 
 export default function page() {
   return (

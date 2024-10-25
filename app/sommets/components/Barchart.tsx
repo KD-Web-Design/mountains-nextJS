@@ -18,37 +18,37 @@ interface MountainData {
 const chartData: MountainData[] = [
   {
     mountain: "Kilimanjaro",
-    location: "Tanzania",
+    location: "Tanzanie",
     altitude: 5895,
     prominence: 5885,
   },
   {
     mountain: "Fuji",
-    location: "Japan",
+    location: "Japon",
     altitude: 3776,
     prominence: 3776,
   },
   {
     mountain: "Everest",
-    location: "Nepal/China",
+    location: "Népal/Chine",
     altitude: 8849,
     prominence: 8848,
   },
   {
     mountain: "Cervin",
-    location: "Switzerland/Italia",
+    location: "Suisse/Italie",
     altitude: 4478,
     prominence: 1040,
   },
   {
     mountain: "Ama Dablam",
-    location: "Nepal",
+    location: "Népal",
     altitude: 6812,
     prominence: 1041,
   },
   {
     mountain: "Kirkjufell",
-    location: "Iceland",
+    location: "Islande",
     altitude: 463,
     prominence: 449,
   },
@@ -67,7 +67,7 @@ const chartConfig = {
     color: "#2563eb",
   },
   prominence: {
-    label: "Prominence",
+    label: "Proéminence",
     color: "#60a5fa",
   },
 } satisfies ChartConfig;
@@ -91,7 +91,7 @@ const CustomToolTipContent: React.FC<CustomTooltipProps> = ({
         <div className="space-y-1">
           <p className="text-sm font-medium text-foreground">{data.mountain}</p>
           <div className="flex justify-between gap-2">
-            <span className="text-xs text-muted-foreground">Location</span>
+            <span className="text-xs text-muted-foreground">Lieu</span>
             <span className="text-xs font-medium text-foreground">
               {data.location}
             </span>
@@ -114,7 +114,7 @@ const CustomToolTipContent: React.FC<CustomTooltipProps> = ({
                 className="inline-block w-2 h-2 mr-1"
                 style={{ backgroundColor: chartConfig.prominence.color }}
               ></span>
-              Prominence
+              Proéminence
             </span>
             <span className="text-xs font-medium text-foreground">
               {data.prominence} m
@@ -131,7 +131,7 @@ export default function Chart() {
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Altitude and Prominence of Major Peaks</CardTitle>
+        <CardTitle>Altitude et Proéminence</CardTitle>
       </CardHeader>
       <ChartContainer
         config={chartConfig}

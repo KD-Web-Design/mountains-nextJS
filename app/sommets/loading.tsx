@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import "../mountains/components/styles/parallax.css";
+import "./components/styles/parallax.css";
 import { Spacing } from "./components/Spacing";
 
 export default function Loading() {

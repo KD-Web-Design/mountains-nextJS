@@ -13,21 +13,25 @@ export default function AccordionDemo() {
       className="max-w-screen-xl mx-auto p-6"
     >
       <AccordionItem value="item-1">
-        <AccordionTrigger>Are the pictures free of rights ?</AccordionTrigger>
+        <AccordionTrigger>
+          Les photos et vidéos sont elles libre de droits ?
+        </AccordionTrigger>
         <AccordionContent>
-          Yes. All pictures comes from Pixabay and Pexels.
+          Oui. Toutes les photos et vidéos proviennent de Pixabay et Pexels.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Is this app powered by Next.JS ?</AccordionTrigger>
+        <AccordionTrigger>
+          Cette application utilise t-elle Next.JS ?
+        </AccordionTrigger>
         <AccordionContent>
-          Yes. Along with Typescript and TailwindCSS.
+          Oui. Ainsi que TailwindCSS et TypeScript.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Is there a dark mode ?</AccordionTrigger>
+        <AccordionTrigger>Y&apos;a t-il un dark mode ?</AccordionTrigger>
         <AccordionContent>
-          Of course, take a look at the upper right corner.
+          Bien sûr ! Cliquez sur le bouton en haut à droite.
         </AccordionContent>
       </AccordionItem>
     </Accordion>

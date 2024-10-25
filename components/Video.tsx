@@ -25,6 +25,7 @@ async function VideoComponent({ fileName }: { fileName: string }) {
           preload="auto"
           aria-label="Video player"
           loop
+          // autoPlay
           muted
           className="w-full h-screen object-cover -z-10"
         >

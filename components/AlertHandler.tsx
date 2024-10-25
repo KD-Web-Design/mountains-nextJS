@@ -20,7 +20,7 @@ export default function AlertHandler() {
           className="text-white bg-black hover:bg-black"
           onClick={handleClick}
         >
-          Go Climbing
+          J&apos;escalade
         </Button>
         {<AlertDemo alertActive={alertActive} />}
       </div>

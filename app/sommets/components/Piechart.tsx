@@ -27,15 +27,15 @@ const chartData = [
 
 const chartConfig = {
   sky: {
-    label: "Sky",
+    label: "Ciel",
     color: "#60a5fa",
   },
   sunny: {
-    label: "Sunny side of the mountain",
+    label: "Coté ensoleillé de la montagne",
     color: "#f9fafb",
   },
   shady: {
-    label: "Shady side of the mountain",
+    label: "Coté ombragé de la montagne",
     color: "#9ca3af",
   },
 } satisfies ChartConfig;
