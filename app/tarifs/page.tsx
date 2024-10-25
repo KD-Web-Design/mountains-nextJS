@@ -1,11 +1,13 @@
 import React from "react";
 import { Spacing } from "../sommets/components/Spacing";
+import Pricing from "./components/Pricing";
 
 export default function page() {
   return (
     <main>
       <Spacing size="md" />
-      <h1>Page 3</h1>
+      <Pricing />
+      <Spacing size="md" />
     </main>
   );
 }

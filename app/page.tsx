@@ -13,6 +13,7 @@ export default function Home() {
         <Testimonials />
         <Spacing size="sm" />
         <AccordionDemo />
+        <Spacing size="sm" />
       </div>
     </>
   );
