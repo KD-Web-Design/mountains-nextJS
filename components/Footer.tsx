@@ -1,5 +1,10 @@
 import React from "react";
 import { MountainIcon } from "./Navbar";
+import Link from "next/link";
+import GithubIcon from "@/icons/GithubIcon";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
+import LinkedInIcon from "@/icons/LinkedInIcon";
 
 export default function Footer() {
   return (
@@ -15,27 +20,28 @@ export default function Footer() {
               summitSeekers
             </span>
           </a>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                A propos
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                Politique de confidentialité
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                Licence
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Contact
-              </a>
-            </li>
+          <ul className="flex items-center gap-4 justify-end">
+            <Link
+              href="https://github.com/KD-Web-Design"
+              target="_blank"
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "size-6 p-0"
+              )}
+            >
+              <GithubIcon size={24} className="text-foreground" />
+            </Link>
+
+            <Link
+              href="https://www.linkedin.com/in/kd-web-design-64b496315/"
+              target="_blank"
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "size-6 p-0"
+              )}
+            >
+              <LinkedInIcon size={24} className="text-foreground" />
+            </Link>
           </ul>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />

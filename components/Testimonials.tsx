@@ -43,40 +43,47 @@ const testimonials: Testimonial[] = [
 export default function Testimonials() {
   const { theme } = useTheme();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-10 rounded-lg max-w-screen-xl mx-auto">
-      {testimonials.map(({ id, name, role, image, text }) => (
-        <MagicCard
-          key={id}
-          className=" bg-gray-100 dark:bg-gray-900 text-white"
-          gradientColor={theme === "dark" ? "#4B5563" : "#d1d5db"}
-        >
-          <div className="flex flex-col h-full">
-            <CardContent className="p-6 flex-grow">
-              <div className="text-black dark:text-white text-4xl mb-4">“</div>
-              <p className="text-black dark:text-white text-lg font-light">
-                {text}
-              </p>
-            </CardContent>
-            <CardFooter className="flex items-center space-x-4 mt-auto">
-              <Image
-                src={image}
-                alt={name}
-                width={128}
-                height={128}
-                className="h-12 w-12 rounded-full object-cover"
-              />
-              <div>
-                <p className="text-black dark:text-white font-semibold">
-                  {name}
+    <section className="max-w-screen-xl mx-auto">
+      <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl p-6 ml-6">
+        Quelques témoignages inspirants...
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-10 rounded-lg">
+        {testimonials.map(({ id, name, role, image, text }) => (
+          <MagicCard
+            key={id}
+            className=" bg-gray-100 dark:bg-gray-900 text-white"
+            gradientColor={theme === "dark" ? "#4B5563" : "#d1d5db"}
+          >
+            <div className="flex flex-col h-full">
+              <CardContent className="p-6 flex-grow">
+                <div className="text-black dark:text-white text-4xl mb-4">
+                  “
+                </div>
+                <p className="text-black dark:text-white text-lg font-light">
+                  {text}
                 </p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  {role}
-                </p>
-              </div>
-            </CardFooter>
-          </div>
-        </MagicCard>
-      ))}
-    </div>
+              </CardContent>
+              <CardFooter className="flex items-center space-x-4 mt-auto">
+                <Image
+                  src={image}
+                  alt={name}
+                  width={128}
+                  height={128}
+                  className="h-12 w-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-black dark:text-white font-semibold">
+                    {name}
+                  </p>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    {role}
+                  </p>
+                </div>
+              </CardFooter>
+            </div>
+          </MagicCard>
+        ))}
+      </div>
+    </section>
   );
 }

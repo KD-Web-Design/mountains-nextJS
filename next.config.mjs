@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["upload.wikimedia.org"],
+    domains: ["upload.wikimedia.org", "avatar.vercel.sh"],
   },
 };
 
