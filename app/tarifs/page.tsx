@@ -5,7 +5,7 @@ import Pricing from "./components/Pricing";
 export default function page() {
   return (
     <main>
-      <Spacing size="md" />
+      <Spacing size="sm" />
       <Pricing />
       <Spacing size="md" />
     </main>

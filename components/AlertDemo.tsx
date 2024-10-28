@@ -1,4 +1,4 @@
-import { RocketIcon } from "@radix-ui/react-icons";
+import { MountainSnow } from "lucide-react";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
@@ -14,7 +14,7 @@ export function AlertDemo({ alertActive }: AlertDemoProps) {
           alertActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
         }`}
     >
-      <RocketIcon className="h-4 w-4" />
+      <MountainSnow className="h-4 w-4" />
       <AlertTitle>Le saviez-vous ?</AlertTitle>
       <AlertDescription>
         Le mont Everest prend environ 44 millimètres chaque année.
